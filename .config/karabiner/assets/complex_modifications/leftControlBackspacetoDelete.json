@@ -1,0 +1,26 @@
+{
+    "title": "Left Control + Backspace to Delete",
+    "rules": [
+        {
+            "description": "Left Control + Backspace to Delete",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "delete_or_backspace",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_forward"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}
