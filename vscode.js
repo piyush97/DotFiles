@@ -18,9 +18,6 @@
   "editor.cursorBlinking": "solid",
   "editor.colorDecorators": false,
   "editor.minimap.enabled": false,
-  "vscode_custom_css.imports": [
-    "/Volumes/Macintosh HD/Users/wesbos/.vscodestyles.css"
-  ],
   "workbench.activityBar.visible": false,
   "workbench.sideBar.location": "left",
   "editor.renderWhitespace": "none",
