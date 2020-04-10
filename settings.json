@@ -1,0 +1,56 @@
+{
+  "markdown-preview-enhanced.liveUpdate": true,
+  "window.zoomLevel": -2,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "material-icon-theme",
+  "todo-tree.tags": ["TODO", "FIXME", "learn"],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "vs-kubernetes": {
+    "vs-kubernetes.minikube-path": "/Users/piyushmehta/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+    "vs-kubernetes.helm-path": "/Users/piyushmehta/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+    "vs-kubernetes.kubectl-path": "/Users/piyushmehta/.vs-kubernetes/tools/kubectl/kubectl",
+    "vs-kubernetes.draft-path": "/Users/piyushmehta/.vs-kubernetes/tools/draft/darwin-amd64/draft"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Cobalt2",
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontSize": 20,
+  "editor.fontLigatures": true,
+  "[scss]": {
+    "editor.defaultFormatter": "MikeBovenlander.formate"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "expand",
+  "editor.cursorWidth": 3,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.eslintIntegration": true,
+  "terminal.integrated.rendererType": "dom",
+  "python.jediEnabled": false
+}
+
