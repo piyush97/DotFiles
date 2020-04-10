@@ -1,10 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:/Users/piyushmehta/flutter/bin"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/piyushmehta/.oh-my-zsh"
 export PATH="/usr/local/bin:$PATH"
-export PATH=$PATH:`yarn global bin`
+export PATH=$PATH:$(yarn global bin)
 export PATH=$PATH:/opt/yarn-1.7.0/bin
 
 # Set name of the theme to load --- if set to "random", it will
@@ -12,7 +11,7 @@ export PATH=$PATH:/opt/yarn-1.7.0/bin
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
-
+source ~/.zsh_plugins.sh
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -65,7 +64,7 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git kubectl npm node git-flow brew zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,3 +105,6 @@ fo() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+alias -g kgpnc="kgp -n cabs-staging"
