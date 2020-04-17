@@ -132,8 +132,36 @@ plugins=(git kubectl npm node git-flow brew zsh-autosuggestions zsh-completions 
 source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-alias -g kgpnc="kgp -n cabs-staging"
+kgpncc() {
+  if test -t 1; then
+    # see if it supports colors
+    ncolors=$(tput colors)
+    if test -n "$ncolors" && test $ncolors -ge 8; then
+      bold="$(tput bold)"
+      underline="$(tput smul)"
+      standout="$(tput smso)"
+      normal="$(tput sgr0)"
+      black="$(tput setaf 0)"
+      red="$(tput setaf 1)"
+      green="$(tput setaf 2)"
+      yellow="$(tput setaf 3)"
+      blue="$(tput setaf 4)"
+      magenta="$(tput setaf 5)"
+      cyan="$(tput setaf 6)"
+      white="$(tput setaf 7)"
+    fi
+  fi
+
+  kubectl get pods -n cabs-staging "$@" |
+    sed "s/Running/${green}Running${normal}/g" |
+    sed "s/Pending/${yellow}Pending${normal}/g" |
+    sed "s/Completed/${blue}Completed${normal}/g" |
+    sed "s/Error/${red}Error${normal}/g" |
+    sed "s/CrashLoopBackOff/${red}CrashLoopBackOff${normal}/g"
+}
+alias -g kgpnc="kgpncc"
 source /Users/piyushmehta/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
 alias pcat='pygmentize -f terminal256 -O style=monokai -g'
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
