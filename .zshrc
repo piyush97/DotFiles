@@ -1,4 +1,6 @@
 export ZSH="/Users/piyushmehta/.oh-my-zsh"
+export PATH=$PATH:/usr/local/mysql/bin
+
 ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_ORDER=(
   time
@@ -14,6 +16,10 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep
   exec_time
 )
+export VIRTUAL_ENV_DISABLE_PROMPT=
+export LC_CTYPE=en_GB.UTF-8
+export TERM="xterm-256color"
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line)
 
 # PROMPT
 SPACESHIP_CHAR_SYMBOL="➜  "
@@ -127,10 +133,10 @@ SPACESHIP_VI_MODE_NORMAL="[N]"
 SPACESHIP_VI_MODE_COLOR="white"
 # Kubectl
 SPACESHIP_KUBECTL_VERSION_SHOW=false
-plugins=(git kubectl npm node git-flow brew zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
+plugins=(git kubectl npm node git-flow brew zsh-autosuggestions zsh-syntax-highlighting git-extras gitfast zsh-kubectl-prompt)
 
 source $ZSH/oh-my-zsh.sh
-
+source /Users/piyushmehta/zsh-kubectl-prompt/kubectl.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 kgpncc() {
   if test -t 1; then
