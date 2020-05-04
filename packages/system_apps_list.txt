@@ -1,0 +1,36 @@
+Alfred 4.app
+AltServer.app
+AppCleaner.app
+Authy Desktop.app
+Backup and Sync.app
+Bandwidth+.app
+BloomRPC.app
+Brave Browser.app
+CleanMyMac X.app
+Clover Configurator.app
+CloverThemeManager.app
+Cyberduck.app
+Dashlane.app
+Docker.app
+Fantastical 2.app
+HazeOver.app
+IntelliJ IDEA.app
+Jira.app
+Magnet.app
+MonitorControl.app
+Polypane.app
+Postman.app
+Rocket.app
+Safari.app
+Sequel Pro.app
+Sketch.app
+Slack.app
+Spark.app
+Telegram.app
+Unclutter.app
+Unsplash Wallpapers.app
+Utilities
+Visual Studio Code.app
+WhatsApp.app
+YT Music.app
+iTerm.app
