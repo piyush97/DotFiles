@@ -42,16 +42,22 @@ cd ~/dotfiles
 
 ### 📱 Applications
 - **Browsers**: LibreWolf, Ungoogled Chromium, Firefox
-- **Development**: VS Code, Warp Terminal, Postman
-- **Utilities**: Raycast, Aerospace, HiddenBar, Stats
+- **Development**: VS Code, Docker, Postman, GitHub Desktop
+- **Terminals**: Kitty, Warp, iTerm2
+- **Window Management**: Aerospace, Yabai (tiling window managers)
+- **Productivity**: Raycast (launcher with productivity features)
+- **Utilities**: HiddenBar, Stats, The Unarchiver
 - **Fonts**: SF Mono, SF Pro, Hack Nerd Font, Fira Code
 
 ### ⚙️ Configurations
-- Zsh with custom aliases and functions
-- Git with useful aliases and delta diff viewer
-- Neovim with modern Lua configuration
-- VS Code settings optimized for development
-- macOS system preferences optimization
+- **Shell**: Zsh with custom aliases and functions
+- **Git**: Useful aliases and delta diff viewer
+- **Editors**: Neovim with modern Lua configuration, VS Code optimized settings
+- **Terminals**: Kitty with custom themes and keybindings
+- **Window Management**: Aerospace and Yabai configurations for tiling
+- **Productivity**: Raycast scripts and shortcuts
+- **Prompt**: Starship cross-shell prompt with git integration
+- **System**: macOS preferences optimization
 
 ## File Structure
 
@@ -68,8 +74,11 @@ dotfiles/
 │   ├── starship/          # Starship prompt configuration
 │   │   └── starship.toml
 │   ├── nvim/              # Neovim configuration
-│   ├── aerospace/         # Window manager config
-│   ├── alacritty/         # Terminal emulator config
+│   ├── aerospace/         # Aerospace window manager config
+│   ├── yabai/             # Yabai window manager config
+│   ├── kitty/             # Kitty terminal emulator config
+│   ├── raycast/           # Raycast launcher config
+│   ├── alacritty/         # Alacritty terminal config
 │   ├── warp/              # Warp terminal config
 │   ├── git/               # Additional git config
 │   └── vscode/            # VS Code settings
@@ -92,6 +101,20 @@ After running the installation script, complete these steps:
 
 ## Customization
 
+### Importing Your Current Configs
+
+To import your existing `~/.config/` files:
+
+```bash
+# Run the import helper
+./import-configs.sh
+
+# Follow the prompts to select which configs to import
+# Choose option 1 for all safe configs, or 3 for individual selection
+```
+
+The script safely imports common configs while excluding sensitive data.
+
 ### Local Configurations
 Create these files to add local/work-specific configurations without modifying the main dotfiles:
 
@@ -102,11 +125,11 @@ Create these files to add local/work-specific configurations without modifying t
 ### Adding Packages
 To add more packages to the installation:
 
-1. Edit `install.sh` 
-2. Add packages to the respective arrays:
-   - `packages` array for Homebrew CLI tools
-   - `casks` array for GUI applications
-   - Update other package arrays as needed
+1. Edit `install.conf.yaml` 
+2. Add packages to the appropriate groups:
+   - `formulas` for Homebrew CLI tools
+   - `casks` for GUI applications
+   - Update the profiles that should include them
 
 ## Useful Aliases & Functions
 

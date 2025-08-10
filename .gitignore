@@ -110,3 +110,38 @@ Desktop.ini
 !.config/*/
 !.config/starship/
 !.config/starship/starship.toml
+# git specific ignores
+.config/git/cache/
+.config/git/Cache/
+.config/git/*.log
+.config/git/*.tmp
+
+# kitty specific ignores
+.config/kitty/cache/
+.config/kitty/Cache/
+.config/kitty/*.log
+.config/kitty/*.tmp
+
+# nvim specific ignores
+.config/nvim/cache/
+.config/nvim/Cache/
+.config/nvim/*.log
+.config/nvim/*.tmp
+
+# raycast specific ignores
+.config/raycast/cache/
+.config/raycast/Cache/
+.config/raycast/*.log
+.config/raycast/*.tmp
+
+# yabai specific ignores
+.config/yabai/cache/
+.config/yabai/Cache/
+.config/yabai/*.log
+.config/yabai/*.tmp
+
+# aerospace specific ignores
+.config/aerospace/cache/
+.config/aerospace/Cache/
+.config/aerospace/*.log
+.config/aerospace/*.tmp

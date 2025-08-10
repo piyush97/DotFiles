@@ -108,9 +108,17 @@ packages:
       - docker
       - github
       
+      # Terminals
+      - kitty
+      - warp
+      - iterm2
+      
+      # Window Management
+      - aerospace
+      - yabai
+      
       # Utilities
       - raycast
-      - aerospace
       - stats
       - the-unarchiver
       
@@ -166,7 +174,7 @@ configs:
   
   ".config/aerospace":
     source: ".config/aerospace"
-    backup: false
+    backup: true
   
   ".config/alacritty":
     source: ".config/alacritty"
@@ -179,6 +187,18 @@ configs:
   ".config/git":
     source: ".config/git"
     backup: false
+  
+  ".config/kitty":
+    source: ".config/kitty"
+    backup: true
+  
+  ".config/raycast":
+    source: ".config/raycast"
+    backup: true
+  
+  ".config/yabai":
+    source: ".config/yabai"
+    backup: true
 
 # VS Code settings (special handling for macOS)
 vscode:
