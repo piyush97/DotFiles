@@ -1,0 +1,254 @@
+# Dotfiles Installation Configuration
+# This file defines what gets installed and how
+
+# Installation profiles
+profiles:
+  minimal:
+    description: "Minimal setup for basic development"
+    includes:
+      - essential_tools
+      - git_config
+      - shell_basics
+  
+  standard:
+    description: "Standard development environment"
+    includes:
+      - essential_tools
+      - modern_cli
+      - git_config
+      - shell_config
+      - development_languages
+      - editors
+  
+  complete:
+    description: "Complete setup with all tools and applications"
+    includes:
+      - essential_tools
+      - modern_cli
+      - git_config
+      - shell_config
+      - development_languages
+      - editors
+      - databases
+      - devops_tools
+      - applications
+      - fonts
+
+# Package groups
+packages:
+  essential_tools:
+    formulas:
+      - git
+      - gh
+      - curl
+      - wget
+      - tree
+      - jq
+      - yq
+      - starship
+  
+  modern_cli:
+    formulas:
+      - bat           # Better cat
+      - eza           # Better ls
+      - fd            # Better find
+      - fzf           # Fuzzy finder
+      - ripgrep       # Better grep
+      - htop          # Better top
+      - dust          # Better du
+      - duf           # Better df
+      - procs         # Better ps
+      - delta         # Better git diff
+      - tldr          # Simplified man pages
+      - thefuck       # Command correction
+      - z             # Directory jumper
+  
+  development_languages:
+    formulas:
+      - node
+      - python@3.12
+      - go
+      - rust
+      - bun
+    post_install:
+      - "npm install -g yarn pnpm"
+  
+  editors:
+    formulas:
+      - neovim
+      - vim
+    casks:
+      - visual-studio-code
+  
+  databases:
+    formulas:
+      - postgresql@15
+      - redis
+      - sqlite
+  
+  devops_tools:
+    formulas:
+      - docker
+      - docker-compose
+      - kubernetes-cli
+      - helm
+      - terraform
+      - awscli
+  
+  applications:
+    casks:
+      # Browsers
+      - firefox
+      - google-chrome
+      
+      # Development
+      - warp
+      - iterm2
+      - postman
+      - docker
+      - github
+      
+      # Utilities
+      - raycast
+      - aerospace
+      - stats
+      - the-unarchiver
+      
+      # Communication
+      - discord
+      - slack
+      - telegram
+      
+      # Security
+      - 1password
+      - 1password-cli
+  
+  fonts:
+    casks:
+      - font-sf-mono
+      - font-sf-pro
+      - font-hack-nerd-font
+      - font-fira-code-nerd-font
+      - font-jetbrains-mono-nerd-font
+
+# Dotfiles symlinks
+dotfiles:
+  # Root level dotfiles
+  ".zshrc":
+    source: ".zshrc"
+    backup: true
+  
+  ".gitconfig":
+    source: ".gitconfig"
+    backup: true
+  
+  ".gitignore_global":
+    source: ".gitignore_global"
+    backup: true
+  
+  ".gitmessage":
+    source: ".gitmessage"
+    backup: false
+  
+  ".p10k.zsh":
+    source: ".p10k.zsh"
+    backup: true
+
+# Config directory symlinks  
+configs:
+  ".config/starship":
+    source: ".config/starship"
+    backup: true
+  
+  ".config/nvim":
+    source: ".config/nvim"
+    backup: true
+  
+  ".config/aerospace":
+    source: ".config/aerospace"
+    backup: false
+  
+  ".config/alacritty":
+    source: ".config/alacritty"
+    backup: false
+  
+  ".config/warp":
+    source: ".config/warp"
+    backup: false
+  
+  ".config/git":
+    source: ".config/git"
+    backup: false
+
+# VS Code settings (special handling for macOS)
+vscode:
+  settings_dir: "~/Library/Application Support/Code/User"
+  source_dir: ".config/vscode"
+  files:
+    - settings.json
+    - keybindings.json
+    - snippets
+
+# macOS system preferences
+macos_settings:
+  finder:
+    - "defaults write com.apple.finder AppleShowAllFiles YES"
+    - "defaults write NSGlobalDomain AppleShowAllExtensions -bool true"
+    - "defaults write com.apple.finder ShowPathbar -bool true"
+    - "defaults write com.apple.finder ShowStatusBar -bool true"
+  
+  keyboard:
+    - "defaults write NSGlobalDomain KeyRepeat -int 2"
+    - "defaults write NSGlobalDomain InitialKeyRepeat -int 15"
+    - "defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false"
+  
+  trackpad:
+    - "defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true"
+    - "defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1"
+  
+  dock:
+    - "defaults write com.apple.dock autohide -bool true"
+    - "defaults write com.apple.dock minimize-to-application -bool true"
+    - "defaults write com.apple.dock show-recents -bool false"
+
+# Post-installation scripts
+post_install:
+  - description: "Configure Oh My Zsh"
+    command: |
+      if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+      fi
+  
+  - description: "Install Powerlevel10k theme"
+    command: |
+      if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+      fi
+  
+  - description: "Generate SSH key"
+    command: |
+      if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
+        ssh-keygen -t ed25519 -C "your-email@example.com" -f "$HOME/.ssh/id_ed25519" -N ""
+      fi
+
+# Health checks
+health_checks:
+  - name: "Homebrew"
+    command: "brew --version"
+    required: true
+  
+  - name: "Git"
+    command: "git --version"
+    required: true
+  
+  - name: "Starship"
+    command: "starship --version"
+    required: false
+  
+  - name: "Node.js"
+    command: "node --version"
+    required: false
+  
+  - name: "Python"
+    command: "python3 --version"
+    required: false
