@@ -1,0 +1,13 @@
+aerospace
+android-platform-tools
+block-goose
+font-hack-nerd-font
+font-sf-mono
+font-sf-pro
+hiddenbar
+librewolf
+raycast
+sf-symbols
+stats
+ungoogled-chromium
+warp
