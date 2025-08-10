@@ -1,3 +1,112 @@
-dotfiles/.ssh
-dotfiles/.pypirc
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Editor files
+*.swp
+*.swo
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.vscode/*
+!.vscode/settings.json
+*.code-workspace
+.idea/
+*.iml
+
+# Logs and history
+*.log
+.zsh_history
+.bash_history
+.lesshst
+.wget-hsts
+.node_repl_history
+.python_history
+
+# Development
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+__pycache__/
+*.py[cod]
+venv/
+.env
+.env.local
+.env.*.local
+
+# Private/Sensitive files
+.ssh/
+.pypirc
+secrets/
+private/
+*.key
+*.pem
+*.cert
+*.crt
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+id_dsa*
+
+# Local configuration overrides
+.zshrc.local
+.gitconfig.local
+.config/*/local/*
+
+# Backup files
+*.backup
+*.bak
+*.old
+*_backup_*
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Package manager files
+.npm/
+.yarn/
+.pnpm-store/
+
+# Cache directories
+.cache/
+.config/*/cache/
+.config/*/Cache/
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+
+# Don't ignore the main config files we want to track
+!.config/
+!.config/*/
+!.config/starship/
+!.config/starship/starship.toml
