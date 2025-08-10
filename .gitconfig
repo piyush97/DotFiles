@@ -1,0 +1,197 @@
+[user]
+    name = Piyush Mehta
+    email = hey@piyushmehta.com
+    signingkey = ~/.ssh/id_ed25519.pub
+
+[core]
+    editor = code --wait
+    autocrlf = input
+    safecrlf = true
+    excludesfile = ~/.gitignore_global
+    pager = delta
+    filemode = false
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+
+[rebase]
+    autoStash = true
+
+[merge]
+    conflictstyle = diff3
+    tool = vscode
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+
+[diff]
+    tool = vscode
+    colorMoved = default
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+# Delta configuration (better diff viewer)
+[delta]
+    navigate = true
+    light = false
+    line-numbers = true
+    side-by-side = false
+    syntax-theme = Dracula
+
+[interactive]
+    diffFilter = delta --color-only
+
+# Aliases
+[alias]
+    # Basic shortcuts
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    df = diff
+    dc = diff --cached
+    lg = log --oneline --graph --decorate --all
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    
+    # More complex aliases
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    visual = !gitk
+    type = cat-file -t
+    dump = cat-file -p
+    
+    # Show files ignored by git
+    ign = ls-files -o -i --exclude-standard
+    
+    # Assume unchanged
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    
+    # Snapshot - quickly save current work
+    snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+    snapshots = !git stash list --grep snapshot
+    
+    # Clean up merged branches
+    cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+    
+    # Show contributors
+    who = shortlog -n -s --no-merges
+    
+    # Undo last commit but keep changes
+    undo = reset --soft HEAD^
+    
+    # Hard reset to last commit
+    reset-hard = reset --hard HEAD
+    
+    # Show current branch
+    current = symbolic-ref --short HEAD
+    
+    # Push current branch
+    pc = !git push origin $(git current)
+    
+    # Create and switch to new branch
+    nb = checkout -b
+    
+    # Interactive rebase
+    ri = rebase -i
+    
+    # Amend last commit
+    amend = commit --amend --no-edit
+    
+    # Force push safely
+    fpush = push --force-with-lease
+    
+    # Show modified files in last commit
+    dl = "!git ll -1"
+    
+    # Show a diff last commit
+    dlc = diff --cached HEAD^
+    
+    # Diff in staged area
+    ds = diff --staged
+    
+    # Find commits by message
+    fm = "!git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --grep"
+    
+    # Find commits by source code
+    fc = "!git log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short -S"
+    
+    # List aliases
+    aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+
+[commit]
+    gpgsign = false
+    template = ~/.gitmessage
+
+[tag]
+    sort = version:refname
+
+[versionsort]
+    suffix = -pre
+    suffix = .pre
+    suffix = -beta
+    suffix = .beta
+    suffix = -rc
+    suffix = .rc
+
+[gpg]
+    format = ssh
+
+[help]
+    autocorrect = 1
+
+# URL shortcuts
+[url "git@github.com:"]
+    insteadOf = gh:
+    pushInsteadOf = github:
+    pushInsteadOf = git://github.com/
+
+[url "git://github.com/"]
+    insteadOf = github:
+
+[url "git@gist.github.com:"]
+    insteadOf = gst:
+    pushInsteadOf = gist:
+    pushInsteadOf = git://gist.github.com/
+
+[url "git://gist.github.com/"]
+    insteadOf = gist:
+
+# Include local config if it exists
+[include]
+    path = ~/.gitconfig.local

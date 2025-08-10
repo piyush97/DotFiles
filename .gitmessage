@@ -1,0 +1,30 @@
+# <type>: <subject>
+#
+# <body>
+#
+# <footer>
+
+# Type should be one of the following:
+# * feat (new feature)
+# * fix (bug fix)
+# * docs (documentation)
+# * style (formatting, missing semi colons, etc; no code change)
+# * refactor (refactoring production code)
+# * test (adding tests, refactoring test; no production code change)
+# * chore (updating build tasks, package manager configs, etc; no production code change)
+
+# Subject should use imperative tone and say what you did.
+# The body should go into detail about changes made.
+# The footer should contain any JIRA (or other tool) issue references or actions.
+
+# For a full example of how to write a good commit message, check out
+# https://chris.beams.io/posts/git-commit/
+
+# Remember:
+#   Separate subject from body with a blank line
+#   Limit the subject line to 50 characters
+#   Capitalize the subject line
+#   Do not end the subject line with a period  
+#   Use the imperative mood in the subject line
+#   Wrap the body at 72 characters
+#   Use the body to explain what and why vs. how

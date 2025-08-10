@@ -1,0 +1,259 @@
+{
+  // ===== EDITOR APPEARANCE =====
+  "editor.fontFamily": "SF Mono, Hack Nerd Font, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.6,
+  "editor.fontWeight": "400",
+  "editor.letterSpacing": 0.5,
+  "editor.cursorWidth": 2,
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "smooth",
+
+  // ===== EDITOR BEHAVIOR =====
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.wordWrap": "on",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.autoIndent": "advanced",
+  "editor.quickSuggestionsDelay": 10,
+  "editor.snippetSuggestions": "top",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // ===== WORKBENCH =====
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.tabCloseButton": "right",
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.activityBar.location": "default",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.value": 10,
+
+  // ===== WINDOW =====
+  "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}",
+  "window.zoomLevel": 0,
+  "window.closeWhenEmpty": true,
+  "window.openFilesInNewWindow": "off",
+  "window.newWindowDimensions": "inherit",
+  "window.restoreWindows": "folders",
+
+  // ===== FILES =====
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/.next": true,
+    "**/.nuxt": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/build/**": true
+  },
+
+  // ===== EDITOR FEATURES =====
+  "editor.minimap.enabled": true,
+  "editor.minimap.scale": 1,
+  "editor.minimap.showSlider": "mouseover",
+  "editor.colorDecorators": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80, 100, 120],
+  "editor.showFoldingControls": "mouseover",
+  "editor.find.seedSearchStringFromSelection": "always",
+  "editor.matchBrackets": "always",
+  "editor.scrollBeyondLastLine": false,
+  "editor.useTabStops": true,
+  "editor.largeFileOptimizations": true,
+  "editor.suggestSelection": "first",
+  "editor.parameterHints.enabled": true,
+  "editor.definitionLinkOpensInPeek": false,
+  "editor.stablePeek": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+
+  // ===== TERMINAL =====
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontFamily": "SF Mono, Hack Nerd Font",
+  "terminal.integrated.shell.osx": "/opt/homebrew/bin/zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // ===== LANGUAGE-SPECIFIC =====
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+
+  // ===== EXTENSIONS =====
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  // Prettier
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 100,
+  "prettier.tabWidth": 2,
+
+  // ESLint
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+
+  // GitLens
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+
+  // Auto Rename Tag
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "php",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+
+  // Spell Checker
+  "cSpell.userWords": [
+    "Piyush",
+    "Mehta",
+    "piyushmehta",
+    "dotfiles",
+    "zsh",
+    "nvim",
+    "homebrew",
+    "raycast",
+    "aerospace",
+    "warp",
+    "librewolf",
+    "hiddenbar",
+    "ungoogled",
+    "chromium",
+    "Signin",
+    "Signout",
+    "SIGNUP",
+    "TLDR",
+    "backend",
+    "frontend",
+    "fullstack",
+    "javascript",
+    "typescript",
+    "reactjs",
+    "nextjs",
+    "nodejs",
+    "python",
+    "golang",
+    "rustlang",
+    "kubernetes",
+    "docker",
+    "postgresql",
+    "mongodb",
+    "redis",
+    "elasticsearch",
+    "nginx",
+    "apache",
+    "cloudflare",
+    "vercel",
+    "netlify",
+    "github",
+    "gitlab",
+    "bitbucket"
+  ],
+
+  // JavaScript/TypeScript
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "prompt",
+  "security.workspace.trust.banner": "always",
+  "security.workspace.trust.startupPrompt": "always",
+
+  // Telemetry
+  "telemetry.telemetryLevel": "off",
+
+  // Update
+  "update.mode": "start",
+  "update.showReleaseNotes": false,
+
+  // Experimental
+  "editor.inlineSuggest.enabled": true
+}
